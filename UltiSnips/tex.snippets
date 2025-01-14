@@ -387,4 +387,153 @@ snippet ac "Acroynm normal" bi
 \ac{${1:acronym}}
 endsnippet
 
+snippet beg "begin{} / end{}" bA
+\begin{$1}
+	$0
+\end{$1}
+endsnippet
+
+#############
+# CHEMISTRY #
+#############
+snippet ch "Chemical Formula" w
+\ch{$1}`!p
+if t[2] and t[2][0] not in [',', '.', '?', '-', ' ']:
+    snip.rv = ' '
+else:
+    snip.rv = ''
+`$0
+endsnippet
+
+snippet qty "Quantity" w
+\qty{$1}{$2}$0
+endsnippet
+
+snippet units "Units" w
+\units{$1}`!p
+if t[2] and t[2][0] not in [',', '.', '?', '-', ' ']:
+    snip.rv = ' '
+else:
+    snip.rv = ''
+`$0
+endsnippet
+
+snippet num "Number" w
+\num{${1:${VISUAL}}}`!p
+if t[2] and t[2][0] not in [',', '.', '?', '-', ' ']:
+    snip.rv = ' '
+else:
+    snip.rv = ''
+`$0
+endsnippet
+
+snippet mk "Math" wA
+$${1}$`!p
+if t[2] and t[2][0] not in [',', '.', '?', '-', ' ']:
+    snip.rv = ' '
+else:
+    snip.rv = ''
+`$0
+endsnippet
+
+snippet K "K" w
+\K${1}{}$0
+endsnippet
+
+snippet pK "pK" w
+\pK${1}[${2}]{}$0
+endsnippet
+
+snippet g "gas" w
+\gas{}$0
+endsnippet
+
+snippet aq "aqueous" w
+\aq{}$0
+endsnippet
+
+snippet s "solid" w
+\sld{}$0
+endsnippet
+
+snippet l "liquid" w
+\lqd{}$0
+endsnippet
+
+snippet h2o "water" w
+\water$0
+endsnippet
+
+snippet h3o "hydronium" w
+\Oxo{}$0
+endsnippet
+
+snippet oh "hydroxide" w
+\Hyd{}$0
+endsnippet
+
+snippet pH "pH" Aw
+\pH{}$0
+endsnippet
+
+snippet pOH "pOH" Aw
+\pOH{}$0
+endsnippet
+
+snippet temp "temperature" w
+\qty{$1}{${2:\celsius}}$0
+endsnippet
+
+snippet conc "concentration" w
+\qty{$1}{${2:\Molar}}$0
+endsnippet
+
+snippet p+ "proton" Aw
+\prt{}$0
+endsnippet
+
+snippet e- "electron" Aw
+\el{}$0
+endsnippet
+
+snippet n0 "neutron" Aw
+\ntr{}$0
+endsnippet
+
+#################
+# PRESENTATIONS #
+#################
+
+snippet frame "Frame" b
+\begin{frame}[${1:c}]{$2}
+	$3
+\end{frame}
+$0
+endsnippet
+
+#########
+# EXAMS #
+#########
+
+snippet corr "Correct Choice" bA
+\CorrectChoice $0
+endsnippet
+
+snippet ncorr "Choice" bA
+\choice $0
+endsnippet
+
+snippet mult "Multiple-Choice Question" bA
+\question%
+${1:${VISUAL}}
+
+\begin{randomizechoices}[$2]
+	$3
+\end{randomizechoices}
+
+\vfill%
+
+$0
+endsnippet
+
 # vim:ft=snippets:

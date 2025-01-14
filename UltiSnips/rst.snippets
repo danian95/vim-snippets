@@ -308,4 +308,17 @@ snippet sid "SideBar" b
 	${2:${VISUAL:SideBar Content}}
 endsnippet
 
+##############
+# LaTeX math #
+##############
+
+snippet ch "Chem2Text" w
+\text{${1:${VISUAL}}}`!p
+if t[2] and t[2][0] not in [',', '.', '?', '-', ' ']:
+    snip.rv = ' '
+else:
+    snip.rv = ''
+`$0
+endsnippet
+
 # vim:set list noet sts=0 sw=4 ts=4:
