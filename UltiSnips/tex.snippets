@@ -500,6 +500,10 @@ snippet n0 "neutron" Aw
 \ntr{}$0
 endsnippet
 
+snippet HHeq "Henderson Hasselbach equation" Aw
+\pH{} &= \pKa{} + \log \frac{\ch{[base]}}{\ch{[acid]}}
+endsnippet
+
 #################
 # PRESENTATIONS #
 #################
@@ -534,6 +538,12 @@ ${1:${VISUAL}}
 \vfill%
 
 $0
+endsnippet
+
+snippet qsolu "Question Solution" bA
+\begin{solution}[\stretch{${1:1}}]
+	${0:${VISUAL}}
+\end{solution}
 endsnippet
 
 # vim:ft=snippets:
